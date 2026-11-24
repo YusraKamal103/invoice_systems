@@ -24,7 +24,7 @@ Section: 1A
 
 /*
 Programmer: Samaan
-Date: 
+Date: 16/oct
 
 Explanation: this struct stores the data of one product 
 contains 
@@ -43,7 +43,7 @@ int productCount = 0;
 
 /*  
 Programmer: Yusra Kamal 
-Date:
+Date:16/oct
 
 Explanation: 
 This Function saves all the products in the file products.txt
@@ -67,7 +67,7 @@ void saveProducts() {
 
 /*  
 Programmer: Yusra Kamal 
-Date:
+Date:16/oct
 
 Explanation: 
 Saves the products into products .txt with separates
@@ -116,7 +116,7 @@ void loadProducts() {
 
 /*  
 Programmer: Samaan 
-Date:
+Date:19/oct
 
 Explanation: 
 Check Users inserted barcode aganist stored barcodes returns the index if found the barcode 
@@ -132,7 +132,7 @@ int findProduct(char code[]) {
 }
 /*  
 Programmer: Samaan 
-Date:
+Date:19/oct
 
 Explanation: 
 Displays the stored Products onto the screen 
@@ -149,7 +149,7 @@ void listProducts() {
 
 /*  
 Programmer: Samaan 
-Date:
+Date:19/oct
 
 Explanation: 
 Add the product to the Stored list if some new product is launched
@@ -189,7 +189,7 @@ void addProduct() {
 
 /*  
 Programmer: Yusra Kamal 
-Date:
+Date:20/oct
 
 Explanation: 
 Updates the product details if the user wishes
@@ -225,7 +225,7 @@ void updateProduct() {
 
 /*  
 Programmer: Yusra Kamal 
-Date:
+Date:21/oct
 
 Explanation: 
 This deletes the product from the stored list 
@@ -255,7 +255,7 @@ void deleteProduct() {
 }
 /* 
 Programmer: Samaan
-Date:
+Date:21/oct
 
 Explanation: 
 This Function gives a new number to each invoice. this takes the last number from counter.txt and then
@@ -284,7 +284,7 @@ int getInvoiceNumber() {
 
 /*
 Programmer: Yusra Kamal 
-Date: 
+Date: 22/oct
 
 
 Explanation:
@@ -326,8 +326,7 @@ void printInvoice(FILE *out, int number, char date[], char customer[],
 
 /*  
 Programmers: Samaan and Yusra Kamal 
-Date:
-
+Date:23/oct
 Explanation: 
 Creates the Invoice for one entry entered by the user
 */
@@ -421,7 +420,7 @@ void createInvoice() {
 
 /*  
 Programmer: Yusra 
-Date:
+Date:24/oct
 
 Explanation: 
 
@@ -446,7 +445,7 @@ void viewInvoices() {
 
 /*  
 Programmer: Samaan 
-Date:
+Date:28/oct
 
 Explanation: 
 This executes the all the function according to user choice 
