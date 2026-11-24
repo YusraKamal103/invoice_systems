@@ -1,9 +1,4 @@
-/* ticket_gui.c - simple Windows GUI for the invoice system.
-   Uses the same files as ticket.c: products.txt, counter.txt, invoices.txt
 
-   Build:  gcc ticket_gui.c -o ticket_gui.exe -mwindows
-   (Dev-C++: Tools > Compiler Options > add  -mwindows  to the linker commands)
-*/
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,7 +22,7 @@ int itemIndex[MAX_ITEMS];
 int itemQty[MAX_ITEMS];
 int itemCount = 0;
 
-/* ================= data code (same as ticket.c) ================= */
+
 
 void saveProducts() {
     FILE *fp = fopen("products.txt", "w");
