@@ -1,3 +1,10 @@
+/*
+runs directly in DEV C 
+for making it execute in VS code 
+add this in terminal : gcc project_final.c -o project_final.exe -lgdi32; if ($?) { .\project_final.exe }
+--> project_final is the file name 
+*/
+
 
 #include <windows.h>
 #include <stdio.h>
