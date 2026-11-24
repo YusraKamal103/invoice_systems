@@ -31,8 +31,8 @@ contains
 barcode, name and price
 
 */
-struct Product {
-    char barcode[21];
+struct Product {  
+    char barcode[21]; //+1 space for null rectifiers '/0' cuz they are strings
     char name[41];
     float price;
 };
@@ -48,6 +48,8 @@ Date:16/oct
 Explanation: 
 This Function saves all the products in the file products.txt
 Goes thourght every record stored and writes every code into the file
+first checks if the fp is null or not andthen from the product array
+stores in th eproduct file
 
 */
 void saveProducts() {
@@ -70,7 +72,8 @@ Programmer: Yusra Kamal
 Date:16/oct
 
 Explanation: 
-Saves the products into products .txt with separates
+Saves the products into products .txt as default products 
+first saving them into array of products and then calling saveproducts function
 */
 void loadProducts() {
     FILE *fp = fopen("products.txt", "r");
