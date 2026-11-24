@@ -1,3 +1,17 @@
+/*
+Invoice System 
+
+programmers:
+Yusra Kamal (26k-2518)
+Samaan (26k-2516)
+
+Course: Programming Fundamentals
+Course Instrustor: Miss Ramsha Jat
+
+Department: Data Science
+Section: 1A
+
+*/
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
@@ -6,16 +20,36 @@
 #define MAX_ITEMS 50
 #define TAX_RATE 17
 
+
+
+/*
+Programmer: Samaan
+Date: 
+
+Explanation: this struct stores the data of one product 
+contains 
+barcode, name and price
+
+*/
 struct Product {
     char barcode[21];
     char name[41];
     float price;
 };
-
+//making an variable of the struct
 struct Product products[MAX_PRODUCTS];
 int productCount = 0;
 
 
+/*  
+Programmer: Yusra Kamal 
+Date:
+
+Explanation: 
+This Function saves all the products in the file products.txt
+Goes thourght every record stored and writes every code into the file
+
+*/
 void saveProducts() {
     FILE *fp = fopen("products.txt", "w");
     int i;
@@ -31,6 +65,13 @@ void saveProducts() {
 }
 
 
+/*  
+Programmer: Yusra Kamal 
+Date:
+
+Explanation: 
+Saves the products into products .txt with separates
+*/
 void loadProducts() {
     FILE *fp = fopen("products.txt", "r");
     char line[120];
@@ -73,7 +114,13 @@ void loadProducts() {
     fclose(fp);
 }
 
+/*  
+Programmer: Samaan 
+Date:
 
+Explanation: 
+Check Users inserted barcode aganist stored barcodes returns the index if found the barcode 
+*/
 int findProduct(char code[]) {
     int i;
     for (i = 0; i < productCount; i++) {
@@ -83,6 +130,14 @@ int findProduct(char code[]) {
     }
     return -1;
 }
+/*  
+Programmer: Samaan 
+Date:
+
+Explanation: 
+Displays the stored Products onto the screen 
+*/
+
 
 void listProducts() {
     int i;
@@ -91,6 +146,14 @@ void listProducts() {
         printf("%-15s %-25s %10.2f\n", products[i].barcode, products[i].name, products[i].price);
     }
 }
+
+/*  
+Programmer: Samaan 
+Date:
+
+Explanation: 
+Add the product to the Stored list if some new product is launched
+*/
 
 void addProduct() {
     struct Product p;
@@ -124,6 +187,14 @@ void addProduct() {
     printf("Product added.\n");
 }
 
+/*  
+Programmer: Yusra Kamal 
+Date:
+
+Explanation: 
+Updates the product details if the user wishes
+*/
+
 void updateProduct() {
     char code[21];
     int index;
@@ -152,6 +223,15 @@ void updateProduct() {
     printf("Price updated.\n");
 }
 
+/*  
+Programmer: Yusra Kamal 
+Date:
+
+Explanation: 
+This deletes the product from the stored list 
+*/
+
+
 void deleteProduct() {
     char code[21];
     int index, i;
@@ -173,7 +253,15 @@ void deleteProduct() {
     saveProducts();
     printf("Product deleted.\n");
 }
+/* 
+Programmer: Samaan
+Date:
 
+Explanation: 
+This Function gives a new number to each invoice. this takes the last number from counter.txt and then
+add 1 to it. then saves the new number in the file and returns it
+
+*/
 
 int getInvoiceNumber() {
     int number = 1000;
@@ -194,7 +282,16 @@ int getInvoiceNumber() {
     return number;
 }
 
+/*
+Programmer: Yusra Kamal 
+Date: 
 
+
+Explanation:
+This Function prints one invoice to the screen or to a file,
+depending on the out parameter.
+
+*/
 void printInvoice(FILE *out, int number, char date[], char customer[],
                   int itemIndex[], int itemQty[], int itemCount, float discountPercent) {
     int i;
@@ -227,6 +324,15 @@ void printInvoice(FILE *out, int number, char date[], char customer[],
     fprintf(out, "================================================\n");
 }
 
+/*  
+Programmers: Samaan and Yusra Kamal 
+Date:
+
+Explanation: 
+Creates the Invoice for one entry entered by the user
+*/
+
+
 void createInvoice() {
     int itemIndex[MAX_ITEMS];
     int itemQty[MAX_ITEMS];
@@ -257,7 +363,7 @@ void createInvoice() {
         }
 
         index = findProduct(code);
-        if (index == -1) {
+        if (index == -1){
             printf("Barcode not found.\n");
             continue;
         }
@@ -313,6 +419,15 @@ void createInvoice() {
     }
 }
 
+/*  
+Programmer: Yusra 
+Date:
+
+Explanation: 
+
+*/
+
+
 void viewInvoices() {
     FILE *fp = fopen("invoices.txt", "r");
     int ch;
@@ -328,6 +443,16 @@ void viewInvoices() {
     fclose(fp);
 }
 
+
+/*  
+Programmer: Samaan 
+Date:
+
+Explanation: 
+This executes the all the function according to user choice 
+*/
+
+
 int main() {
     int choice;
 
@@ -338,7 +463,7 @@ int main() {
         printf("1. Create invoice\n");
         printf("2. View saved invoices\n");
         printf("3. List products\n");
-        printf("4. Add product\n");
+        printf("4. Add prod	uct\n");
         printf("5. Update product price\n");
         printf("6. Delete product\n");
         printf("0. Exit\n");
@@ -346,7 +471,7 @@ int main() {
         scanf("%d", &choice);
 
         switch (choice) {
-            case 1: createInvoice(); break;
+             case 1: createInvoice(); break;
             case 2: viewInvoices(); break;
             case 3: listProducts(); break;
             case 4: addProduct(); break;
