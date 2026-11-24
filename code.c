@@ -425,7 +425,7 @@ void createInvoice() {
 Programmer: Yusra 
 Date:24/oct
 
-Explanation: 
+Explanation: will allow the user to view an invoice from  the file
 
 */
 
